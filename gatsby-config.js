@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `9 Lives Synergistic Business Solutions`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `A website for a fake business run by real pets, a cat and a dog.`,
+    author: `Dan Buda`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

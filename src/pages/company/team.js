@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Layout from '../../components/layout';
 import pets from '../../images/pets.jpg';
 
@@ -20,6 +21,7 @@ const Team = () => (
         tempora doloribus recusandae deleniti.
       </p>
     </div>
+    <Link to="/">Back Home</Link>
   </Layout>
 );
 

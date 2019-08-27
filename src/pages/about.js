@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Layout from '../components/layout';
 
 const About = () => (
@@ -12,6 +13,7 @@ const About = () => (
         tempora doloribus recusandae deleniti.
       </p>
     </div>
+    <Link to="/">Back Home</Link>
   </Layout>
 );
 

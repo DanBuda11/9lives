@@ -28,10 +28,9 @@ const Blog = () => {
   const data = useStaticQuery(BLOG_POST_QUERY);
   const posts = data.allMarkdownRemark.edges.map(post => {
     return (
-      <li>
+      <li key={post.node.frontmatter.slug}>
         <Link
           to={`/blog${post.node.frontmatter.slug}`}
-          key={post.node.frontmatter.slug}
           style={{
             boxShadow: `5px 5px 5px rgba(0,0,0,.3)`,
             textDecoration: `none`,

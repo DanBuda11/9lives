@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import Listing from '../components/listing';
 import SEO from '../components/seo';
 
 const IndexPage = () => {
@@ -25,6 +26,7 @@ const IndexPage = () => {
       <Link to="/company/team">Meet the Team!</Link>
       <br />
       <Link to="/blog">Go to the Blog!</Link>
+      <Listing />
     </Layout>
   );
 };

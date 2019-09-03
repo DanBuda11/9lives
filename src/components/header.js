@@ -1,11 +1,18 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
+
+const HeaderWrapper = styled.div`
+  background: #bada55;
+  img {
+    margin-bottom: 0;
+  }
+`;
 
 const Header = ({ siteTitle }) => (
-  <header
+  <HeaderWrapper
     style={{
-      background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -28,7 +35,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
-  </header>
+  </HeaderWrapper>
 );
 
 Header.propTypes = {

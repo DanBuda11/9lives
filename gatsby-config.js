@@ -6,6 +6,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-styled-components',
+    `gatsby-plugin-favicon`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,14 +22,14 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `9 Lives Synergistic Business Solutions`,
+        short_name: `9livesbs`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -35,7 +37,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-styled-components',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

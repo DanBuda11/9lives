@@ -11,11 +11,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const Header = ({ siteTitle }) => (
-  <HeaderWrapper
-    style={{
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <HeaderWrapper style={{}}>
     <div
       style={{
         margin: `0 auto`,

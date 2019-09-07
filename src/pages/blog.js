@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-
+import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -19,6 +20,13 @@ const BLOG_POST_QUERY = graphql`
             slug
             date(formatString: "MMMM DD, YYYY")
           }
+        }
+      }
+    }
+    file(relativePath: { regex: "/pets/" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
@@ -53,7 +61,7 @@ const Blogpost = styled.li`
   }
 `;
 
-const Blog = () => {
+const Blog = ({ location }) => {
   const data = useStaticQuery(BLOG_POST_QUERY);
   const posts = data.allMarkdownRemark.edges.map(post => {
     return (
@@ -92,9 +100,12 @@ const Blog = () => {
   });
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Blog from a Dog (and Cat)" />
       <h1>Blog</h1>
+      {location.pathname === '/' && (
+        <Img fluid={data.file.childImageSharp.fluid} />
+      )}
       <Bloglist
       // style={{
       //   listStyle: `none`,
@@ -105,6 +116,10 @@ const Blog = () => {
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   );
+};
+
+Blog.propTypes = {
+  location: {},
 };
 
 export default Blog;

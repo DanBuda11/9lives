@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, useStaticQuery } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 import Layout from '../../components/layout';
-import pets from '../../images/pets.jpg';
 
-const Team = () => {
+const Team = ({ location }) => {
   const data = useStaticQuery(graphql`
     query TeamQuery {
       file(relativePath: { regex: "/pets/" }) {
@@ -18,10 +18,12 @@ const Team = () => {
   `);
 
   return (
-    <Layout>
+    <Layout location={location}>
       <div>
         <h1>Meet the Team!</h1>
-        <Img fluid={data.file.childImageSharp.fluid} />
+        {location.pathname === '/' && (
+          <Img fluid={data.file.childImageSharp.fluid} />
+        )}
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
           deserunt excepturi rem repellendus tempore, nam aliquid accusamus
@@ -33,4 +35,9 @@ const Team = () => {
     </Layout>
   );
 };
+
+Team.propTypes = {
+  location: {},
+};
+
 export default Team;

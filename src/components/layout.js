@@ -24,31 +24,11 @@ const Layout = ({ children, location }) => (
             description
           }
         }
-        file(relativePath: { regex: "/pets/" }) {
-          childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
-        }
       }
     `}
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Spring
-          from={{ height: location.pathname === '/' ? 100 : 200 }}
-          to={{ height: location.pathname === '/' ? 200 : 100 }}
-        >
-          {styles => (
-            <div style={{ overflow: 'hidden', ...styles }}>
-              <Img fluid={data.file.childImageSharp.fluid} />
-            </div>
-          )}
-        </Spring>
-        {/* {location.pathname === '/' && (
-              
-            )} */}
         <div
           style={{
             margin: `0 auto`,
@@ -73,10 +53,6 @@ const Layout = ({ children, location }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
-
-Layout.defaultProps = {
-  location: {},
 };
 
 export default Layout;

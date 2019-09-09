@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
-import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -61,7 +59,7 @@ const Blogpost = styled.li`
   }
 `;
 
-const Blog = ({ location }) => {
+const Blog = () => {
   const data = useStaticQuery(BLOG_POST_QUERY);
   const posts = data.allMarkdownRemark.edges.map(post => {
     return (
@@ -100,12 +98,9 @@ const Blog = ({ location }) => {
   });
 
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO title="Blog from a Dog (and Cat)" />
       <h1>Blog</h1>
-      {location.pathname === '/' && (
-        <Img fluid={data.file.childImageSharp.fluid} />
-      )}
       <Bloglist
       // style={{
       //   listStyle: `none`,
@@ -116,10 +111,6 @@ const Blog = ({ location }) => {
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   );
-};
-
-Blog.propTypes = {
-  location: {},
 };
 
 export default Blog;

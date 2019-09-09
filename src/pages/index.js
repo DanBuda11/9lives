@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import Listing from '../components/listing';
 import SEO from '../components/seo';
 
-const IndexPage = ({ location }) => {
+const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query indexDescription {
       site {
@@ -26,13 +25,11 @@ const IndexPage = ({ location }) => {
   `);
 
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO title="Home" />
       <h1>Hi people</h1>
       <p>{data.site.siteMetadata.description}</p>
-      {location.pathname === '/' && (
-        <Img fluid={data.file.childImageSharp.fluid} />
-      )}
+      <Img fluid={data.file.childImageSharp.fluid} />
       <Link to="/about">Lean About the Biz!</Link>
       <br />
       <Link to="/company/team">Meet the Team!</Link>
@@ -41,10 +38,6 @@ const IndexPage = ({ location }) => {
       <Listing />
     </Layout>
   );
-};
-
-IndexPage.propTypes = {
-  location: {},
 };
 
 export default IndexPage;

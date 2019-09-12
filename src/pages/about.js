@@ -20,7 +20,12 @@ const About = () => {
     <Layout>
       <div>
         <h1>About 9 Lives Synergistic Business Solutions</h1>
-        <Img fluid={data.file.childImageSharp.fluid} />
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          style={{
+            width: `300px`,
+          }}
+        />
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
           deserunt excepturi rem repellendus tempore, nam aliquid accusamus

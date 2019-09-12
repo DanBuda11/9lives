@@ -10,6 +10,10 @@ const HeaderWrapper = styled.div`
   }
 `;
 
+const ListItem = styled.li`
+  margin: 1rem 3rem;
+`;
+
 const Header = ({ siteTitle }) => (
   <HeaderWrapper style={{}}>
     <div
@@ -30,6 +34,22 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <ul
+        style={{
+          listStyle: `none`,
+          display: `flex`,
+        }}
+      >
+        <ListItem>
+          <Link to="/about">About Us</Link>
+        </ListItem>
+        <ListItem>
+          <Link to="/blog">Blog</Link>
+        </ListItem>
+        <ListItem>
+          <Link to="/company/team">Meet the Team!</Link>
+        </ListItem>
+      </ul>
     </div>
   </HeaderWrapper>
 );

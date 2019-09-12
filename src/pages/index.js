@@ -29,7 +29,12 @@ const IndexPage = () => {
       <SEO title="Home" />
       <h1>Hi people</h1>
       <p>{data.site.siteMetadata.description}</p>
-      <Img fluid={data.file.childImageSharp.fluid} />
+      <Img
+        fluid={data.file.childImageSharp.fluid}
+        style={{
+          width: `300px`,
+        }}
+      />
       <Link to="/about">Lean About the Biz!</Link>
       <br />
       <Link to="/company/team">Meet the Team!</Link>

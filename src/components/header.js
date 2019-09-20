@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import headerStyles from '../styles/header.module.scss';
+
 const HeaderWrapper = styled.div`
   background: #bada55;
   img {
@@ -15,7 +17,7 @@ const ListItem = styled.li`
 `;
 
 const Header = ({ siteTitle }) => (
-  <HeaderWrapper style={{}}>
+  <HeaderWrapper className="header-main">
     <div
       style={{
         margin: `0 auto`,
@@ -34,12 +36,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <ul
-        style={{
-          listStyle: `none`,
-          display: `flex`,
-        }}
-      >
+      <ul className={headerStyles.headerLinks}>
         <ListItem>
           <Link to="/about">About Us</Link>
         </ListItem>

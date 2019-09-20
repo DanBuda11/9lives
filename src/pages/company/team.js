@@ -20,7 +20,12 @@ const Team = () => {
     <Layout>
       <div>
         <h1>Meet the Team!</h1>
-        <Img fluid={data.file.childImageSharp.fluid} />
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          style={{
+            height: `40px`,
+          }}
+        />
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
           deserunt excepturi rem repellendus tempore, nam aliquid accusamus

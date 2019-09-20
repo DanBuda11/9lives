@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
+import Footer from './footer';
 import './layout.css';
 import '../styles/styles.scss';
 
@@ -27,15 +28,19 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main
-          style={{
-            marginTop: `1rem auto`,
-          }}
-        >
-          {children}
-        </main>
-        <footer>Footer</footer>
+        <div className="container">
+          <div className="content">
+            <Header siteTitle={data.site.siteMetadata.title} />
+            <main
+              style={{
+                marginTop: `1rem auto`,
+              }}
+            >
+              {children}
+            </main>
+          </div>
+        </div>
+        <Footer />
       </>
     )}
   />

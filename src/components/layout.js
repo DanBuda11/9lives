@@ -31,13 +31,7 @@ const Layout = ({ children }) => (
         <div className="container">
           <div className="content">
             <Header siteTitle={data.site.siteMetadata.title} />
-            <main
-              style={{
-                marginTop: `1rem auto`,
-              }}
-            >
-              {children}
-            </main>
+            <main>{children}</main>
           </div>
         </div>
         <Footer />

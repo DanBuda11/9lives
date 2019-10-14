@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
-import SEO from './seo';
+// import SEO from './seo';
 
 const LISTING_QUERY = graphql`
   query BlogPostListing {

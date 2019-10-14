@@ -1,54 +1,28 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
 
 import headerStyles from '../styles/header.module.scss';
 
-const HeaderWrapper = styled.div`
-  background: #bada55;
-  img {
-    margin-bottom: 0;
-  }
-`;
-
-const ListItem = styled.li`
-  margin: 1rem 3rem;
-`;
-
 const Header = ({ siteTitle }) => (
-  <HeaderWrapper className="header-main">
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+  <div className="header-main">
+    <div>
+      <h1>
+        <Link to="/">{siteTitle}</Link>
       </h1>
       <ul className={headerStyles.headerLinks}>
-        <ListItem>
+        <li>
           <Link to="/about">About Us</Link>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <Link to="/blog">Blog</Link>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <Link to="/company/team">Meet the Team!</Link>
-        </ListItem>
+        </li>
       </ul>
     </div>
-  </HeaderWrapper>
+  </div>
 );
 
 Header.propTypes = {

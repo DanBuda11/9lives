@@ -6,8 +6,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 const LISTING_QUERY = graphql`
   query BlogPostListing {
     allMarkdownRemark(
-      limit: 5
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: DESC, fields: frontmatter___publishedDate }
     ) {
       edges {
         node {
@@ -15,7 +14,7 @@ const LISTING_QUERY = graphql`
           frontmatter {
             title
             slug
-            date(formatString: "MMMM DD, YYYY")
+            publishedDate(formatString: "MMMM DD, YYYY")
           }
         }
       }

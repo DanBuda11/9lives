@@ -27,7 +27,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
+      <h1>Hi everyone!</h1>
       <p>{data.site.siteMetadata.description}</p>
       <Img
         fluid={data.file.childImageSharp.fluid}
